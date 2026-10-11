@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Risk Shield</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="logo"><span class="mark"></span>Digital Risk Shield</div>
+  <nav id="nav">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#social">Social monitoring</a>
+    <a href="#app">App monitoring</a>
+    <a href="#brand">Brand setup</a>
+  </nav>
+</aside>
+
+<main>
+  <div id="banner" class="banner" role="status"></div>
+  <div id="toast" class="toast" role="alert" hidden></div>
+
+  <section id="view-dashboard" class="view">
+    <div class="head">
+      <div><h1>Dashboard</h1><p class="muted">Check profiles and apps against your registered brand assets.</p></div>
+      <a class="btn primary big" href="#social">Scan New Profile</a>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="split">
+      <a class="panel link" href="#social"><h2>Social monitoring</h2><p class="muted">Check a username or profile URL for impersonation signals.</p></a>
+      <a class="panel link" href="#app"><h2>App monitoring</h2><p class="muted">Check an app name or store link against your official app and publisher.</p></a>
+    </div>
+    <div class="panel">
+      <h2>Recent scans</h2>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Date</th><th>Submitted</th><th>Type</th><th>Score</th><th>Risk level</th></tr></thead>
+        <tbody id="history"></tbody>
+      </table></div>
+      <div id="empty" class="empty" hidden>
+        <p>No scans yet. Run your first scan, or load the fictional NovaPay brand to try sample cases.</p>
+        <button class="btn" id="load-demo">Load NovaPay demo brand</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-social" class="view">
+    <h1>Scan a social profile</h1>
+    <form id="form-social" class="panel form">
+      <label>Brand name<input name="brand_name" required maxlength="80"></label>
+      <label>Profile username or URL<input name="submitted" required maxlength="200" placeholder="@username or https://instagram.com/username"></label>
+      <label>Platform<select name="platform"></select></label>
+      <label>Description (optional)<textarea name="description" rows="3" maxlength="500" placeholder="Paste the profile bio if you have it"></textarea></label>
+      <button class="btn primary" type="submit">Scan profile</button>
+    </form>
+    <p class="muted note">Only the text you submit is analyzed. No live data is fetched from social platforms, and a URL alone does not prove an account is fake.</p>
+    <div class="samples" data-for="social"></div>
+    <div id="result-social"></div>
+  </section>
+
+  <section id="view-app" class="view">
+    <h1>Scan a mobile app</h1>
+    <form id="form-app" class="panel form">
+      <label>Brand name<input name="brand_name" required maxlength="80"></label>
+      <label>App name or app store URL<input name="submitted" required maxlength="300"></label>
+      <label>Developer / publisher (optional)<input name="publisher" maxlength="100"></label>
+      <label>App description (optional)<textarea name="description" rows="3" maxlength="500"></textarea></label>
+      <button class="btn primary" type="submit">Scan app</button>
+    </form>
+    <p class="muted note">App stores are not queried. Only the text you submit is analyzed. For store links, the app name is read from the URL.</p>
+    <div class="samples" data-for="app"></div>
+    <div id="result-app"></div>
+  </section>
+
+  <section id="view-brand" class="view">
+    <h1>Brand setup</h1>
+    <form id="form-brand" class="panel form">
+      <label>Brand or company name<input name="name" required maxlength="80"></label>
+      <label>Official website (optional)<input name="official_website" maxlength="200" placeholder="https://example.com"></label>
+      <label>Official social usernames (optional)<input name="socials" placeholder="Separate with commas: brand, brand_help"></label>
+      <div class="row">
+        <label>Official app name (optional)<input name="app_name" maxlength="100"></label>
+        <label>Official publisher (optional)<input name="app_publisher" maxlength="100"></label>
+      </div>
+      <button class="btn primary" type="submit">Save brand profile</button>
+    </form>
+    <p class="muted note">Registered usernames and apps are treated as official and never raised as threats.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

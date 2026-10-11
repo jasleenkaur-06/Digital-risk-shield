@@ -1,0 +1,14 @@
+{"brand": "NovaPay", "official_handles": ["novapay_official"],
+ "official_apps": [{"name": "NovaPay Wallet", "publisher": "NovaPay Technologies Ltd"}],
+ "social": [
+  {"input": "novapay_official", "official": true, "min_level": "Low", "max_level": "Low"},
+  {"input": "@NovaPay_Official", "official": true, "min_level": "Low", "max_level": "Low"},
+  {"input": "novapay_support24", "official": false, "min_level": "High", "max_level": "Critical"},
+  {"input": "nova_pay_rewards", "official": false, "min_level": "High", "max_level": "Critical"},
+  {"input": "https://instagram.com/novapay_support24/", "official": false, "min_level": "High", "max_level": "Critical"},
+  {"input": "random_cook", "official": false, "min_level": "Low", "max_level": "Low"}],
+ "app": [
+  {"input": "NovaPay Wallet", "publisher": "NovaPay Technologies Ltd", "official": true, "min_level": "Low", "max_level": "Low"},
+  {"input": "NovaPay Wallet", "publisher": "Quick Apps LLC", "official": false, "min_level": "High", "max_level": "Critical"},
+  {"input": "NovaPay Wallet Pro", "publisher": "", "official": false, "min_level": "High", "max_level": "Critical"},
+  {"input": "Calculator", "publisher": "", "official": false, "min_level": "Low", "max_level": "Low"}]}
